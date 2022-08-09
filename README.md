@@ -23,7 +23,7 @@ samples, guidance on mobile development, and a full API reference.
 git clone https://github.com/TriptiSharma047/undebunkable
 ```
 - Navigate into the folder
-- Either run the command through terminal:
+- Run the command through terminal:
 ```
 flutter run
 ```
