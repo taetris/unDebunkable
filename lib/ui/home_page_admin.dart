@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: _appBar(
       
       ),
@@ -112,14 +113,16 @@ _appBar(){
 
   return AppBar(
     elevation: 0,
-    backgroundColor: Colors.black,//Color.fromARGB(199, 122, 227, 245),
+    backgroundColor: Colors.white,//Color.fromARGB(199, 122, 227, 245),
     leading: GestureDetector(
       onTap: (){
-        print("tapped");
+        // print("tapped");
+        // Get.back();
+        Navigator.pop(context);
       },
       child: Icon(
         Icons.arrow_back_ios_outlined,
-        color: Colors.white,
+        color: Colors.blue,
       ),
       )
   );

@@ -14,10 +14,13 @@ TextStyle get subHeadingStyle{
 }
 
 TextStyle get mainTitleStyle{
-  return GoogleFonts.lato(
+  return GoogleFonts.dmSerifDisplay(
     textStyle: TextStyle(
-      fontSize: 30,
-      fontWeight: FontWeight.bold,
+      // letterSpacing: 1,
+      
+      // height: 4,
+      fontSize: 64,
+      fontWeight: FontWeight.normal,
       color: Colors.black,
       
     )
