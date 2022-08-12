@@ -257,7 +257,10 @@ class _AddTaskPageState extends State<AddTaskPage> {
           onTap: () {
             moveToLastScreen();
           },
-          child: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.black),
+          child: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.blue,
+          ),
         ));
   }
 

@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: _appBar(
       
       ),
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
     )
   );
   }
-}
+
 // _showClass(){
 //   return Expanded(
 //     child:(){Obx(
@@ -52,75 +53,77 @@ class _HomePageState extends State<HomePage> {
 //     ),
 //   );
 // }
-_addDateBar(){
-  DateTime _selectedDate = DateTime.now(); //here
-  
-  return Container(
-    margin: const EdgeInsets.only(top:20, bottom: 20, left:20, right:10),
-    child: DatePicker(
-      DateTime.now(),
-      height: 100,
-      width: 80,
-      initialSelectedDate: DateTime.now(),
-      selectionColor: Color.fromARGB(230, 59, 196, 10),
-      selectedTextColor: Colors.white,
-      dateTextStyle: GoogleFonts.lato( 
-        textStyle: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-          color: Colors.grey,
+  _addDateBar(){
+    DateTime _selectedDate = DateTime.now(); //here
+    
+    return Container(
+      margin: const EdgeInsets.only(top:20, bottom: 20, left:20, right:10),
+      child: DatePicker(
+        DateTime.now(),
+        height: 100,
+        width: 80,
+        initialSelectedDate: DateTime.now(),
+        selectionColor: Color.fromARGB(230, 59, 196, 10),
+        selectedTextColor: Colors.white,
+        dateTextStyle: GoogleFonts.lato( 
+          textStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            color: Colors.grey,
 
+          ),
         ),
-      ),
-      onDateChange: (date){
-        _selectedDate = date;
-      },
+        onDateChange: (date){
+          _selectedDate = date;
+        },
 
-            ),);
-}
-_addTaskBar(){
-  return Container(
+              ),);
+  }
+  _addTaskBar(){
+    return Container(
 
-    margin: const EdgeInsets.only(left: 20, right:20, top:20),
-    child:Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-      Container(
-        // margin: const EdgeInsets.symmetric(horizontal:20, vertical:10),
-      
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-        Text(DateFormat.yMMMMd().format(DateTime.now()),
-        style: subHeadingStyle,),
-        Text("Today",
-        style: HeadingStyle,)
+      margin: const EdgeInsets.only(left: 20, right:20, top:20),
+      child:Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+        Container(
+          // margin: const EdgeInsets.symmetric(horizontal:20, vertical:10),
+        
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+          Text(DateFormat.yMMMMd().format(DateTime.now()),
+          style: subHeadingStyle,),
+          Text("Today",
+          style: HeadingStyle,)
+        ],)
+        ),
+        MyButton(label: " + Add Class", onTap: (){tapped();})
       ],)
-      ),
-      // MyButton(label: " + Add Class", onTap: (){tapped();})
-    ],)
-);
-}
-
-tapped(){
-  print("adding...");
-  // Get.to(AddTaskPage());
-  
-}
-_appBar(){
-
-  return AppBar(
-    elevation: 0,
-    backgroundColor: Colors.black,//Color.fromARGB(199, 122, 227, 245),
-    leading: GestureDetector(
-      onTap: (){
-        print("tapped");
-      },
-      child: Icon(
-        Icons.arrow_back_ios_outlined,
-        color: Colors.white,
-      ),
-      )
   );
+  }
+
+  tapped(){
+    print("adding...");
+    // Get.to(AddTaskPage());
+    
+  }
+  _appBar(){
+
+    return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.white,//Color.fromARGB(199, 122, 227, 245),
+      leading: GestureDetector(
+        onTap: (){
+          print("tapped");
+          Get.back();
+        },
+        child: Icon(
+          Icons.arrow_back_ios_outlined,
+          color: Colors.blue[500],
+        ),
+        )
+    );
+  }
 }
 
