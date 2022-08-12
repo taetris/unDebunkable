@@ -19,12 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: Color.fromARGB(0, 180, 189, 235),
-        
       ),
-      
       home: InitInput(),
     );
   }
 }
-
-  
